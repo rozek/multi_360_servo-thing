@@ -264,3 +264,37 @@ export default class multi_360_servo extends Thing {
   }]
 }
 ```
+
+## Application Example ##
+
+An "application" may be some JavaScript code entered into and run by the "Modular Things" web editor.
+
+> **Important**: as soon as you plan to use custom things, you can no longer use the original web environment found at [https://modular-things.com/](https://modular-things.com/) but must navigate your browser to [http://localhost:3000](http://localhost:3000) (assuming that you use the default port).
+
+Here is an example for an application using the "multi_360_servo" thing (actually a simple tester for continuous rotation servos):
+
+```javascript
+const BlinkDelay  = 800 // LED toggles every BlinkDelay milliseconds
+
+let Timestamp = Date.now(), Value = 0
+loop(async () => {
+  let now = Date.now()
+  if (Timestamp + BlinkDelay < now) {
+    Value = (Value === 0 ? 0.1 : 0)
+    await Multi360Servo.setRGB(0,0,Value)
+
+    Timestamp = now
+  }
+
+  let AnalogIn = await Multi360Servo.getAnalog(1)
+  Multi360Servo.setServo(0,2*(AnalogIn-0.5))
+}, 10)
+```
+
+![Multi-360-Servo Tester](Multi-360-Servo-Test.png)
+
+This application lets the built-in LED blink blue, and the potentometer will control speed and direction of the attached servo.
+
+## License ##
+
+[MIT License](LICENSE.md)
