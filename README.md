@@ -26,7 +26,7 @@ Below are instructions for installation and use of the "multi_360_servo" thing -
 
 #### Firmware Installation ####
 
-1. Create a new sketch and rename it to `multi_servo`
+1. Create a new sketch and rename it to `multi_360_servo`
 2. Copy the firmware shown below into the sketch editor using the clipboard
 3. Connect the RP2040 board via USB and select it from the board dropdown in the Arduino IDE
 4. Compile and upload the sketch
