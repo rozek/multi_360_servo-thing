@@ -8,7 +8,7 @@ a simple thing for the "[Modular-Things](https://github.com/modular-things/modul
 
 ## Wiring ##
 
-![Schematic](./multi_servo/circuit/images/schematic.png)
+![Schematic](./multi_360_servo/circuit/images/schematic.png)
 
 When powered with 5V, servos may often be directly connected to the RP2040. However, if you plan to use higher voltages (e.g., 6V), you should insert a level shifter between RP2040 and servo.
 
