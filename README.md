@@ -198,7 +198,8 @@ In the "Modular Things" terminology, the "firmware" of a thing is an Arduino ske
 
   void loop() {
     osap.loop();
-  }```
+  }
+```
 
 ## Software ##
 
